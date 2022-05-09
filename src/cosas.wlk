@@ -41,14 +41,16 @@ object arena {
 
 object bateriaAntiaerea {
 	
-	method estaConMisiles() {return true}
+	var tieneMisiles = true
+	
+	method estaConMisiles() {tieneMisiles = !tieneMisiles}
 	method peso() {
-		if (self.estaConMisiles()) {return 300}
+		if (tieneMisiles) {return 300}
 		else {return 200}
 	}
 	
 	method peligrosidad() {
-		if (self.estaConMisiles()) {return 100}
+		if (tieneMisiles) {return 100}
 		else {return 0}
 	}
 	

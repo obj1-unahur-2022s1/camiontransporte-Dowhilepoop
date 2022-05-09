@@ -68,26 +68,26 @@ describe "Bateria Antiaerea" {
 
 	test "Peso con misiles" {
 		
-		bateriaAntiaerea.estaConMisiles()
+		
 		assert.equals(300,bateriaAntiaerea.peso())
 	}
 	
 	test "Peso sin misiles" {
 		
 		
-		not bateriaAntiaerea.estaConMisiles()
+		bateriaAntiaerea.estaConMisiles()
 		assert.equals(200,bateriaAntiaerea.peso())
 	}
 	
 	test "Peligrosidad con misiles" {
 		
-		bateriaAntiaerea.estaConMisiles()
+		
 		assert.equals(100,bateriaAntiaerea.peligrosidad())
 	}
 	
 	test "Peligrosidad sin misiles" {
 		
-		not bateriaAntiaerea.estaConMisiles() 
+		bateriaAntiaerea.estaConMisiles() 
 		assert.equals(0,bateriaAntiaerea.peligrosidad())
 	}
 	

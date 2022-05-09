@@ -26,7 +26,7 @@ object bumblebee {
 	method siEsCargado(){ self.seTransforma()}
 }
 
-object paqueteLadrillos{
+object paqueteLadrillos {
 	var cantidad = 0
 	
 	method cantidadLadrillos(cuantos) {cantidad += cuantos}
@@ -52,11 +52,13 @@ object arena {
 	method bulto() {return 1}
 }
 
-object bateriaAntiarea {
+object bateriaAntiaerea {
 	
-	method estaConMisiles() {return true}
+	var tieneMisiles = true
+	
+	method estaConMisiles() {tieneMisiles = !tieneMisiles}
 	method peso() {
-		if (self.estaConMisiles()) {return 300}
+		if (tieneMisiles) {return 300}
 		else {return 200}
 	}
 	
@@ -64,10 +66,10 @@ object bateriaAntiarea {
 		if (self.estaConMisiles()) {return 100}
 		else {return 0}
 	}
-	method siEsCargado(){ return self.estaConMisiles()}
+	method siEsCargado(){ return tieneMisiles}
 	
 	method bulto() {
-		if (self.estaConMisiles()) {return 2}
+		if (tieneMisiles) {return 2}
 		else {return 1}
 	}
 }

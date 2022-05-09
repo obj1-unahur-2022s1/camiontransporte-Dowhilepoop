@@ -12,7 +12,6 @@ describe "Camion" {
 		arena.pesoArena(150)
 		camion.cargar(arena)
 		// Se carga la bateria antiaerea con los misiles
-		bateriaAntiaerea.estaConMisiles()
 		camion.cargar(bateriaAntiaerea)
 		// Se cargan los 80 ladrillos embalados
 		paqueteLadrillos.cantidadLadrillos(80)

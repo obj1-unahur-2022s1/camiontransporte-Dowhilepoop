@@ -1,6 +1,6 @@
 import cosas2.*
 
-object camion2  {
+object camion  {
 	
 	var carga = []
 	

@@ -10,47 +10,46 @@ describe "Camion 2" {
 		// Se carga a Bumblebee
 		bumblebee.seTransforma()
 		bumblebee.siEsCargado() 
-		camion2.cargar(bumblebee)
+		camion.cargar(bumblebee)
 		
 		// Se carga los 150 kg de arena
 		arena.pesoArena(150)
 		arena.siEsCargado()
-		camion2.cargar(arena)
+		camion.cargar(arena)
 		
 		// Se carga la bateria antiaerea con los misiles
-		bateriaAntiaerea.estaConMisiles()
 		bateriaAntiaerea.siEsCargado()
-		camion2.cargar(bateriaAntiaerea)
+		camion.cargar(bateriaAntiaerea)
 		
 		// Se cargan los 80 ladrillos embalados
 		paqueteLadrillos.cantidadLadrillos(80)
 		embalajeSeguridad.embalar(paqueteLadrillos)
 		embalajeSeguridad.siEsCargado()
-		camion2.cargar(embalajeSeguridad)
+		camion.cargar(embalajeSeguridad)
 		
-		assert.equals(true,camion2.todoPesoPar())
+		assert.equals(true,camion.todoPesoPar())
 		
-		assert.equals(false,camion2.hayAlgunoQuePesa(500))
+		assert.equals(false,camion.hayAlgunoQuePesa(500))
 		
-		assert.equals("error",camion2.elDeNivel(30))
+		assert.equals("error",camion.elDeNivel(30))
 		
-		assert.equals(1430,camion2.pesoTotal())
+		assert.equals(1430,camion.pesoTotal())
 		
-		assert.equals(false,camion2.excedidoDePeso())
+		assert.equals(false,camion.excedidoDePeso())
 		
-		assert.equals([bateriaAntiaerea],camion2.objetosQueSuperanPeligrosidad(20))
+		assert.equals([bumblebee,bateriaAntiaerea],camion.objetosQueSuperanPeligrosidad(20))
 		
-		assert.equals(false,camion2.objetosMasPeligrososQue(embalajeSeguridad))
+		assert.equals(false,camion.objetosMasPeligrososQue(embalajeSeguridad))
 		
-		assert.equals(true,camion2.puedeCircularEnRuta(120))
+		assert.equals(true,camion.puedeCircularEnRuta(120))
 		
-		assert.equals([arena,embalajeSeguridad,bateriaAntiaerea],camion2.tieneAlgoQuePesaEntre(100,300))
+		assert.equals([arena,embalajeSeguridad,bateriaAntiaerea],camion.tieneAlgoQuePesaEntre(100,300))
 		
-		assert.equals(bumblebee,camion2.cosaMasPesada())
+		assert.equals(bumblebee,camion.cosaMasPesada())
 		
-		assert.equals([800,170,300,160],camion2.pesos())
+		assert.equals([800,170,300,160],camion.pesos())
 		
-		aasert.equals(7,camion2.totalBultos())
+		assert.equals(7,camion.totalBultos())
 		
 		
 	}

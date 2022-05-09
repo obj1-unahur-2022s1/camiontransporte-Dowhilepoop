@@ -1,5 +1,5 @@
 import cosas2.*
-
+import camion2.*
 
 
 describe "Embalaje de seguridad" {
@@ -57,14 +57,14 @@ describe "Bateria Antiaerea" {
 	
 	test "Bulto con misiles" {
 		
-		bateriaAntiaerea.estaConMisiles()
+		
 		assert.equals(2,bateriaAntiaerea.bulto())
 	}
 	
 	test "Bulto sin misiles" {
 		
-		not bateriaAntiaerea.estaConMisiles()
-		assert.equals(2,bateriaAntiaerea.bulto())
+		bateriaAntiaerea.estaConMisiles()
+		assert.equals(1,bateriaAntiaerea.bulto())
 	}
 	
 	
