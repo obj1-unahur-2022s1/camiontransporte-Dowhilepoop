@@ -34,14 +34,10 @@ object paqueteLadrillos{
 	method peligrosidad() {return 2}
 	method siEsCargado(){ self.cantidadLadrillos(12)}
 	method bulto() {
-		
 		if (cantidad > 0) and (cantidad <= 100) {return 1}
 		else if (cantidad >= 101) and (cantidad <= 300 ) {return 2}
 		else {return 3}
-	
 	} 
-		
-
  }
 	
 
