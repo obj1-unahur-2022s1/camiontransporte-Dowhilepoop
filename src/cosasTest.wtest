@@ -1,2 +1,100 @@
 import camion.*
 import cosas.*
+
+
+
+describe "Embalaje de seguridad" {
+	
+	test "Residuos embalados" {
+		
+		residuosRadioactivos.pesoResiduos(30)
+		embalajeSeguridad.embalar(residuosRadioactivos)
+		assert.equals(200,embalajeSeguridad.peso())
+		assert.equals(100,embalajeSeguridad.peligrosidad()
+	}
+}
+
+describe "Contenedor" {
+	
+	test "conteniendo Bumblebee " {
+		
+		contenedorPortuario.agregarContenedor(bumblebee)
+		assert.equals(900,contenedorPortuario.peso())
+	}
+	
+	test "Conteniendo 30 ladrillos" {
+		
+		paqueteLadrillos.cantidadLadrillos(30)
+		contenedorPortuario.agregarContenedor(paqueteLadrillos)
+		assert.equals(160,contenedorPortuario.peso())
+	}
+	
+
+	test "El mas peligroso" {
+		
+		 bumblebee.seTransforma()
+		 
+		 contenedorPortuario.agregarContenedor(bumblebee)
+		 contenedorPortuario.agregarContenedor(paqueteLadrillos)
+		 assert.equals(bumblebee,contenedorPortuario.muyPeligroso())
+		 assert.equals(15,contenedorPortuario.peligrosidad())
+		
+		// Como la peligrosidad de bumblebee transformado seguiria dando que es el mas peligroso no vi que sea necesario implementarlo
+		
+		//De cualquier forma cambiaria algo asi : contenedorPortuario.agregarContenedor(bumblebee.seTransforma())
+		                             								
+	}
+	
+}
+
+
+describe "Paquete de ladrillos" {
+	
+	test "10 ladrillos pesan 20 kg" {
+
+		paqueteLadrillos.cantidadLadrillos(10)
+		assert.equals(20,paqueteLadrillos.peso())
+	}
+	
+	test "Peligrosidad" {
+		
+		assert.equals(2,paqueteLadrillos.peligrosidad()
+	}
+}
+
+
+describe "Bateria Antiaerea" {
+	
+
+	test "Peso con misiles" {
+		
+		bateriaAntiaerea.estaConMisiles()
+		assert.equals(300,bateriaAntiaerea.peso())
+	}
+	
+	test "Peso sin misiles" {
+		
+		
+		not bateriaAntiaerea.estaConMisiles()
+		assert.equals(200,bateriaAntiaerea.peso())
+	}
+	
+	test "Peligrosidad con misiles" {
+		
+		bateriaAntiaerea.estaConMisiles()
+		assert.equals(100,bateriaAntiaerea.peligrosidad())
+	}
+	
+	test "Peligrosidad sin misiles" {
+		
+		not bateriaAntiaerea.estaConMisiles() 
+		assert.equals(0,bateriaAntiaerea.peligrosidad())
+	}
+	
+
+}
+
+
+
+
+

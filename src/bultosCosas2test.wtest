@@ -1,0 +1,77 @@
+import cosas2.*
+
+
+
+describe "Embalaje de seguridad" {
+	
+	test "Residuos embalados" {
+		
+		embalajeSeguridad.embalar(residuosRadioactivos)
+		aassert.equals(1,embalajeSeguridad.bulto())
+	}
+}
+
+describe "Contenedor" {
+	
+	test "Bulto conteniendo Bumblebee " {
+		
+		contenedorPortuario.agregarContenedor(bumblebee)
+		assert.equals(1,contenedorPortuario.bulto())
+	}
+	
+	test "Bulto Conteniendo 30 ladrillos" {
+		
+		paqueteLadrillos.cantidadLadrillos(30)
+		contenedorPortuario.agregarContenedor(paqueteLadrillos)
+		assert.equals(1,contenedorPortuario.bulto())
+	}
+		
+}
+
+
+describe "Paquete de ladrillos" {
+	
+	test "Bulto por 100 ladrillos" {
+
+		paqueteLadrillos.cantidadLadrillos(100)
+		assert.equals(1,paqueteLadrillos.bulto())
+			
+	}
+	
+	test "Bulto por 200 ladrillos" {
+		
+		paqueteLadrillos.cantidadLadrillos(200)
+		assert.equals(2,paqueteLadrillos.bulto())
+	}
+	
+	test "Bulto por 400 ladrillos" {
+		
+		paqueteLadrillos.cantidadLadrillos(400)
+		assert.equals(3,paqueteLadrillos.bulto())
+	}
+}
+
+
+describe "Bateria Antiaerea" {
+	
+	
+	test "Bulto con misiles" {
+		
+		bateriaAntiaerea.estaConMisiles()
+		assert.equals(2,bateriaAntiaerea.bulto())
+	}
+	
+	test "Bulto sin misiles" {
+		
+		not bateriaAntiaerea.estaConMisiles()
+		assert.equals(2,bateriaAntiaerea.bulto())
+	}
+	
+	
+
+}
+
+
+
+
+

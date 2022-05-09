@@ -1,17 +1,21 @@
-import cosas.*
+import cosas2.*
 
-object camion {
+object camion2  {
 	
 	var carga = []
 	
 	
-	method cargar(cosa) {carga.add(cosa)}
+	method cargar(cosa) {
+		
+		carga.add(cosa)
+		cosa.siEsCargado()
+	}
 	
 	method descargar(cosa) {carga.remove(cosa)}
 	
 	method todoPesoPar() {return carga.filter({cosa=> cosa.peso() % 2 == 0}) }
 	
-	method hayAlgunoQuePesa(peso) {return carga.any({cosa=> cosa.peso() == peso})}
+	method hayAlgunoQuePesa(peso) {return carga.any(peso)}
 	
 	method elDeNivel(nivel) {return carga.find({cosa=> cosa.peligrosidad() == nivel})}
 	
@@ -32,4 +36,7 @@ object camion {
 	method cosaMasPesada(){return carga.max({cosa=> cosa.peso()})}
 	
 	method pesos(){return carga.filter({cosa=> cosa.peso()})}
+	method totalBultos() {return carga.sum({cosa=> cosa.bulto()})}
+	
+	
 }
