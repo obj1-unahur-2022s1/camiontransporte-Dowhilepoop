@@ -1,3 +1,11 @@
+/* 
+ * camionTest: La forma correcta de hacer los test es definir distintos test por cada assert
+ * porque de otra forma es muy complicado encontrar los errores. Se puede usar el método
+ * initialize() para setear los valores y preparar los datos de prueba, y luego hacer
+ * un test por cada assert.
+ * Por favor, revisá test por test para encontrar el caso que no pasa.
+ */
+
 import camion.*
 import cosas.*
 

@@ -1,3 +1,7 @@
+/* 
+ * bultosCosas2Test: Por favor, revisá los test porque la mayoría no pasan. 
+ */
+
 import cosas2.*
 import camion2.*
 
@@ -7,7 +11,7 @@ describe "Embalaje de seguridad" {
 	test "Residuos embalados" {
 		
 		embalajeSeguridad.embalar(residuosRadioactivos)
-		aassert.equals(1,embalajeSeguridad.bulto())
+		assert.equals(1,embalajeSeguridad.bulto())
 	}
 }
 
@@ -63,7 +67,7 @@ describe "Bateria Antiaerea" {
 	
 	test "Bulto sin misiles" {
 		
-		bateriaAntiaerea.estaConMisiles()
+		bateriaAntiaerea.tieneMisiles()
 		assert.equals(1,bateriaAntiaerea.bulto())
 	}
 	

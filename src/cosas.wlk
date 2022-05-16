@@ -74,7 +74,10 @@ object contenedorPortuario {
 
 
 object residuosRadioactivos {
-	var peso
+	/* Regular. Falta el método peso() para respetar polimorfismo. Te agrego property en la 
+	 * variable para tener el getter.
+	 */
+	var property peso
 	
 	method pesoResiduos(kilogramos) {peso = kilogramos}
 	method peligrosidad() {return 200}
