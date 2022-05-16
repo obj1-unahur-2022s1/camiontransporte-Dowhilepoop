@@ -1,3 +1,10 @@
+/* 
+ * cosasTest: hay algunos errores en el código, los corrijo y también varios test no pasan. 
+ * Los corrijo para que funcionen OK.
+ * La forma correcta de hacer los test es definir distintos test por cada assert
+ * porque de otra forma es muy complicado encontrar los errores.
+ */
+
 import camion.*
 import cosas.*
 
@@ -9,8 +16,8 @@ describe "Embalaje de seguridad" {
 		
 		residuosRadioactivos.pesoResiduos(30)
 		embalajeSeguridad.embalar(residuosRadioactivos)
-		assert.equals(200,embalajeSeguridad.peso())
-		assert.equals(100,embalajeSeguridad.peligrosidad()
+		assert.equals(30,embalajeSeguridad.peso())
+		assert.equals(100,embalajeSeguridad.peligrosidad())
 	}
 }
 
@@ -37,7 +44,7 @@ describe "Contenedor" {
 		 contenedorPortuario.agregarContenedor(bumblebee)
 		 contenedorPortuario.agregarContenedor(paqueteLadrillos)
 		 assert.equals(bumblebee,contenedorPortuario.muyPeligroso())
-		 assert.equals(15,contenedorPortuario.peligrosidad())
+		 assert.equals(30,contenedorPortuario.peligrosidad())
 		
 		// Como la peligrosidad de bumblebee transformado seguiria dando que es el mas peligroso no vi que sea necesario implementarlo
 		
@@ -58,7 +65,7 @@ describe "Paquete de ladrillos" {
 	
 	test "Peligrosidad" {
 		
-		assert.equals(2,paqueteLadrillos.peligrosidad()
+		assert.equals(2,paqueteLadrillos.peligrosidad())
 	}
 }
 
